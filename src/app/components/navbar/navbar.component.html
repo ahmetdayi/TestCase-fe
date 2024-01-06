@@ -1,1 +1,29 @@
-<p>navbar works!</p>
+<nav class="navbar bg-body-tertiary">
+  <form class="container-fluid justify-content-start shadow-lg">
+
+  <button *ngIf="!authService.isAuthenticated()" (click)="redirectLogin()" class="btn btn-outline-success me-2 m-3" type="button">Login</button>
+    <ng-container *ngIf="authService.isAuthenticated() && authService.isParent()">
+      <button  (click)="logout()" class="btn btn-outline-success me-2 m-3" type="button">Logout</button>
+      <button  routerLink="childInfo" class="btn btn-outline-success me-2 m-3" type="button">Update Child Info</button>
+      <button  routerLink="subscribe" class="btn btn-outline-success me-2 m-3" type="button">Subscribe</button>
+
+    </ng-container>
+    <ng-container *ngIf="authService.isAuthenticated() && !authService.isParent() && !authService.isAdmin()">
+      <button  (click)="logout()" class="btn btn-outline-success me-2 m-3" type="button">Logout</button>
+
+      <button  routerLink="add-parent-invite-code" class="btn btn-outline-success me-2 m-3" type="button">Add Parent Invite Code</button>
+      <button  routerLink="child-all-info" class="btn btn-outline-success me-2 m-3" type="button">Show All Info</button>
+
+    </ng-container>
+    <ng-container *ngIf="authService.isAuthenticated() && authService.isAdmin()">
+      <button  (click)="logout()" class="btn btn-outline-success me-2 m-3" type="button">Logout</button>
+
+      <button  routerLink="create-subscribe-type" class="btn btn-outline-success me-2 m-3" type="button">Create Subscribe</button>
+      <button  routerLink="all-subscribe-type" class="btn btn-outline-success me-2 m-3" type="button">All Subscribe</button>
+
+    </ng-container>
+
+
+
+  </form>
+</nav>

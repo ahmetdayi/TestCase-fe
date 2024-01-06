@@ -1,0 +1,17 @@
+
+    <div class="border rounded-2 shadow-lg  m-3 p-3 d-flex justify-content-center flex-column align-items-center">
+        <h2 class="m-3 p-3">Child Info</h2>
+        <p>Email : {{findAllChildResponse?.email}}</p>
+        <p>Name : {{findAllChildResponse?.name}}</p>
+        <p>Surname : {{findAllChildResponse?.surname}}</p>
+        <div class="border rounded-2 shadow-lg  m-3 p-3 d-flex justify-content-center flex-column align-items-center" *ngFor="let parent of findAllChildResponse?.parentList">
+          <h2 class="m-3 p-3">Parents Info</h2>
+            <p class="p-3">Parent Email : {{parent?.email}}</p>
+            <p class="p-3">Parent Name : {{parent?.name}}</p>
+            <p class="p-3">Parent Surname : {{parent?.surname}}</p>
+            <p class="p-3">Parent Invite Code : {{parent?.inviteCode}}</p>
+        </div>
+
+    </div>
+
+

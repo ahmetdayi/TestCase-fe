@@ -1,0 +1,18 @@
+<ng-container *ngIf="userIsSubscribe">
+    <div class="border rounded-2 shadow-lg  m-3 p-3 d-flex justify-content-center flex-column align-items-center">
+        <p>Name : {{subscribeResponse?.subscribeType?.name}}</p>
+        <p>Description : {{subscribeResponse?.subscribeType?.description}}</p>
+        <p>Price : {{subscribeResponse?.subscribeType?.price}}</p>
+    </div>
+</ng-container>
+<ng-container *ngIf="!userIsSubscribe">
+  <ng-container *ngFor="let subscribeType of subscribeTypeResponse">
+      <div class="border rounded-2 shadow-lg  m-3 p-3 d-flex justify-content-center flex-column align-items-center">
+          <p>Email : {{subscribeType?.name}}</p>
+          <p>Email : {{subscribeType?.description}}</p>
+          <p>Email : {{subscribeType?.price}}</p>
+          <button routerLink="subscribe" (click)="createSubscribe(subscribeType?.id)" class="btn btn-outline-primary me-2 m-3" type="button">Subscribe
+          </button>
+      </div>
+  </ng-container>
+</ng-container>

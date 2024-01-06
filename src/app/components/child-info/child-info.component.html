@@ -1,0 +1,9 @@
+<ng-container *ngFor="let child of childResponse">
+    <div class="border rounded-2 shadow-lg  m-3 p-3 d-flex justify-content-center flex-column align-items-center">
+        <p>Email : {{child?.email}}</p>
+        <p>Name : {{child?.name}}</p>
+        <p>Surname : {{child?.surname}}</p>
+        <button routerLink="updateChildInfo/{{child?.id}}" class="btn btn-outline-primary me-2 m-3" type="button">Update Child Info
+        </button>
+    </div>
+</ng-container>
