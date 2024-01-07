@@ -10,10 +10,12 @@ import {CreateSubscribeTypeComponent} from "./components/create-subscribe-type/c
 import {SubscribeTypeAllComponent} from "./components/subscribe-type-all/subscribe-type-all.component";
 import {ParentSignupComponent} from "./components/parent-signup/parent-signup.component";
 import {ChildSignupComponent} from "./components/child-signup/child-signup.component";
+import {ShowChildrenForParentComponent} from "./components/show-children-for-parent/show-children-for-parent.component";
 
 export const routes: Routes = [
   {path: "parentSignup",component: ParentSignupComponent},
   {path: "childSignup",component: ChildSignupComponent},
+  {path: "show-children",component: ShowChildrenForParentComponent},
   {path: "login",component: LoginComponent },
   {path: "childInfo",component: ChildInfoComponent },
   {path: "childInfo/updateChildInfo/:id",component: UpdateChildInfoComponent },

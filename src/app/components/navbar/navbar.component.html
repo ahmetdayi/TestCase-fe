@@ -6,6 +6,7 @@
       <button  (click)="logout()" class="btn btn-outline-success me-2 m-3" type="button">Logout</button>
       <button  routerLink="childInfo" class="btn btn-outline-success me-2 m-3" type="button">Update Child Info</button>
       <button  routerLink="subscribe" class="btn btn-outline-success me-2 m-3" type="button">Subscribe</button>
+      <button  routerLink="show-children" class="btn btn-outline-success me-2 m-3" type="button">Show Children</button>
 
     </ng-container>
     <ng-container *ngIf="authService.isAuthenticated() && !authService.isParent() && !authService.isAdmin()">

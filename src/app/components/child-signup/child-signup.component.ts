@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} from "@angular/forms";
-import {CreateParentRequest} from "../../model/create-parent-request";
-import {ParentService} from "../../services/parent.service";
 import {Router} from "@angular/router";
 import {CreateChildRequest} from "../../model/create-child-request";
 import {ChildService} from "../../services/child.service";
@@ -36,12 +34,13 @@ export class ChildSignupComponent implements OnInit{
       email: ['', Validators.required],
       password: ['', [Validators.required]],
       confirmPassword: ['', [Validators.required]],
-      inviteCode: [' '],
+      inviteCode: [''],
     });
   }
   onSubmit() {
     if (this.form.valid) {
-      this.createChildRequest = this.form.value;
+      this.createChildRequest = {inviteCodeList:[this.form.value["inviteCode"]],...this.form.value}
+      console.log(this.form.value)
       console.log(this.form.value.name)
       this.createParent(this.createChildRequest)
 
